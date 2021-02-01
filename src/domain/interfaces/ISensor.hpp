@@ -1,3 +1,7 @@
+#ifndef I_SENSOR_H
+#define I_SENSOR_H
+
+#include <OneWire.h>
 #include <stdint.h>
 
 class ISensor {
@@ -14,3 +18,5 @@ class ISensor {
 ISensor::ISensor(uint8_t pin) {
   _pin = pin;
 }
+
+#endif

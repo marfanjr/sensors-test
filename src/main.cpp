@@ -1,5 +1,5 @@
 #include "Arduino.h"
-#include "controllers/sensors_controller.hpp"
+#include "controllers/SensorsController.hpp"
 
 SensorsController sensorController = SensorsController();
 

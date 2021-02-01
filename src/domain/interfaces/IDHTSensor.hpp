@@ -1,3 +1,6 @@
+#ifndef I_DHTSENSOR_H
+#define I_DHTSENSOR_H
+
 #include "DHT.h"
 #include "ISensor.hpp"
 
@@ -21,3 +24,5 @@ IDHTSensor::IDHTSensor(uint8_t pin, const uint8_t dhtType): dht(pin, dhtType), I
   type = type;
   dht.begin();
 }
+
+#endif
