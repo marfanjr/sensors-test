@@ -7,7 +7,7 @@
 
 class DS18B20Sensor: public ISensor {
   private:
-    static const uint8_t PIN = 14;
+    static const uint8_t PIN = 5;
     OneWire* oneWire;
     DallasTemperature* dsProbe;
   public:
@@ -26,7 +26,6 @@ DS18B20Sensor::DS18B20Sensor(): ISensor(DS18B20Sensor::PIN) {
   oneWire = new OneWire(DS18B20Sensor::PIN);
   dsProbe = new DallasTemperature(oneWire);
   setName("DS18B20");
-
 }
 
 #endif
