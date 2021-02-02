@@ -21,23 +21,12 @@ class SensorsController: public IController {
 SensorsController::SensorsController() { }
 
 void SensorsController::loop() {
-  delay(2000);
-  h = dht22.getHumidity();
-  t = dht22.getTemperature();
-
-  if (isnan(h)) {
-    Serial.println("Failed to read from DHT sensor!");
-    return;
-  }
-  Serial.print("[DHT22] Humidity: ");
-  Serial.println(h);
-  Serial.print("[DHT22] Temperature: ");
-  Serial.println(t);
-
-  t = dsProbe.getTemperature();
-
-  Serial.print("[DS18B] Temperature: ");
-  Serial.println(t);
+  dht22.read();
+  dht11.read();
+  dsProbe.read();
+  dsProbe.printSensorValues();
+  dht22.printDHTSensorValues();
+  dht11.printDHTSensorValues();
 }
 
 #endif

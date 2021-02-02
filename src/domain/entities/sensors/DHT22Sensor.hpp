@@ -6,11 +6,13 @@
 
 class DHT22Sensor: public IDHTSensor {
   private:
+    static const uint8_t PIN = 4;
   public:
-    static const uint8_t _pin = 4;
     DHT22Sensor();
 };
 
-DHT22Sensor::DHT22Sensor(): IDHTSensor(DHT22Sensor::_pin, DHT22) { }
+DHT22Sensor::DHT22Sensor(): IDHTSensor(DHT22Sensor::PIN, DHT22) { 
+  setName("DHT22");
+}
 
 #endif

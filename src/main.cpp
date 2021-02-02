@@ -9,4 +9,5 @@ void setup() {
 
 void loop() {
   sensorController.loop();
+  yield();
 }
