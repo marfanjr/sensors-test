@@ -14,8 +14,6 @@ bool ISensor::canPrint() {
 }
 
 void ISensor::saveValue(float value, uint32_t readedAt, const char* type) {
-  if(isnan(value)) { return; }
-
   if (sensorValues.size() >= getMaxValues())
     sensorValues.erase(sensorValues.begin());
   sensorValues.push_back(new ISensorValue(value, readedAt, type));

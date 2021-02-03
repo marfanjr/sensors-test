@@ -15,8 +15,6 @@ void IDHTSensor::read() {
 }
 
 void IDHTSensor::saveTemperature(float temperature, uint32_t readedAt) {
-  if (isnan(temperature)) return;
-
   if (tempertureValues.size() >= getMaxValues()) {
     tempertureValues.erase(tempertureValues.begin());
   }
@@ -26,8 +24,6 @@ void IDHTSensor::saveTemperature(float temperature, uint32_t readedAt) {
 }
 
 void IDHTSensor::saveHumidity(float humidity, uint32_t readedAt) {
-  if (isnan(humidity)) return;
-
   if (humidityValues.size() >= getMaxValues()) {
     humidityValues.erase(humidityValues.begin());
   }
