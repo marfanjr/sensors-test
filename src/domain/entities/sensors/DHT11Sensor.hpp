@@ -11,7 +11,7 @@ class DHT11Sensor: public IDHTSensor {
     DHT11Sensor();
 };
 
-DHT11Sensor::DHT11Sensor(): IDHTSensor(DHT11Sensor::PIN, DHT22) {
+DHT11Sensor::DHT11Sensor(): IDHTSensor(DHT11Sensor::PIN, DHT11) {
   setName("DHT11");
 }
 
