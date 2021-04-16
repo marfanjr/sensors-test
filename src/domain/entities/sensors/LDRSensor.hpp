@@ -12,14 +12,16 @@ class LDRSensor : public ISensor{
     LDRSensor();
     void read(){
         if(!canRead()) return;
-        saveValue(getLux(), millis(), "lux");
+        setLastReading(millis());
+        float _lux = getLux();
+        saveValue(_lux, millis(), "lux");
     }
 };
 
 float LDRSensor::getLux() {
-    uint16_t digitalValue = analogRead(PIN);
-    float analogValue = map (digitalValue, 0, 1024, 0, 1);
-    return analogValue;
+    uint16_t _digitalValue = analogRead(LDRSensor::PIN);
+    float _analogValue = map (_digitalValue, 0, 1024, 0.0, 1.0);
+    return _analogValue;
 }
 
 LDRSensor::LDRSensor(): ISensor(LDRSensor::PIN){
