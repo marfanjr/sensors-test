@@ -4,6 +4,7 @@
 #include "../domain/entities/sensors/DHT11Sensor.hpp"
 #include "../domain/entities/sensors/DHT22Sensor.hpp"
 #include "../domain/entities/sensors/DS18B20Sensor.hpp"
+#include "../domain/entities/sensors/LDRSensor.hpp"
 #include "../domain/interfaces/IController.hpp"
 
 class SensorsController: public IController {
@@ -11,6 +12,7 @@ class SensorsController: public IController {
     DHT11Sensor dht11 = DHT11Sensor();
     DHT22Sensor dht22 = DHT22Sensor();
     DS18B20Sensor dsProbe = DS18B20Sensor();
+    LDRSensor ldr = LDRSensor();
     float h;
     float t;
   public:
@@ -24,9 +26,11 @@ void SensorsController::loop() {
   dht22.read();
   dht11.read();
   dsProbe.read();
+  ldr.read();
   dsProbe.printSensorValues();
   dht22.printDHTSensorValues();
   dht11.printDHTSensorValues();
+  ldr.printSensorValues();
 }
 
 #endif
